@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Devdactic scroll
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="9">
+      <ion-searchbar placeholder="Enter index" [(ngModel)]="scrollTo"></ion-searchbar>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button (click)="scrollToIndex()" [disabled]="!scrollTo">Scroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+    <ion-list>
+      <ion-item *cdkVirtualFor="let item of items; let isOdd = odd; let i = index;"
+      tappable (click)="selectItem(item)"
+      [class.odd]="isOdd" [class.focus]="scrollTo == i">
+        <ion-avatar slot="start">
+          <img src="https://loremflickr.com/100/100" />
+        </ion-avatar>
+        <ion-label>
+          {{ item }}
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </cdk-virtual-scroll-viewport>
+</ion-content>

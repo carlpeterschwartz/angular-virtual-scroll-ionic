@@ -1,0 +1,7 @@
+{
+  "name": "angular-virtual-scroll-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
