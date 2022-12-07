@@ -21,7 +21,7 @@
     <ion-list>
       <ion-item *cdkVirtualFor="let item of items; let isOdd = odd; let i = index;"
       tappable (click)="selectItem(item)"
-      [class.odd]="isOdd" [class.focus]="scrollTo == i">
+      [class.odd]="isOdd" [class.focus]="scrollTo === i">
         <ion-avatar slot="start">
           <img src="https://loremflickr.com/100/100" />
         </ion-avatar>
